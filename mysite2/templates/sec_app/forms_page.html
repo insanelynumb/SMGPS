@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends "sec_app/base.html" %}
+{% block body_block %}
+<h1>fill the form!!!</h1>
+    <form method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" class =" btn btn-primary" value="Submit">
+    </form>
+{% endblock %}

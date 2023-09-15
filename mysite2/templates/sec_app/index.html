@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+{% extends "sec_app/base.html" %}
+{% block body_block %}
+        <h1>welcome to homepage</h1>
+        <a href="{% url 'sec_app:users' %}">link to formpage</a>
+        <br>
+        <a href="{% url 'sec_app:register' %}">link for registration</a>
+{% endblock %}

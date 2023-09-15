@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add any additional CSS stylesheets or links here -->
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="jumbotron">
+            {% if registered %}
+                <h1 class="display-4">Thanks for Registering!!</h1>
+            {% else %}
+                <h1 class="display-4">Register Here!!</h1>
+                <p class="lead">Fill out the form:</p>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ user_form.as_p }}
+                    {{ profile_form.as_p }}
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Add any necessary JavaScript scripts or links here -->
+</body>
+</html>
